@@ -15,14 +15,18 @@ fetch("http://localhost:3000/api/events/")
       title.className = "card__title";
       card.appendChild(title);
       title.textContent = elem.name;
+      //organisateur
+      let organizer = document.createElement("p");
+      organizer.className = "card_organizer";
+      card.appendChild(organizer);
+      organizer.textContent = elem.author;
       //description
       let description = document.createElement("p");
       description.className = "card__description";
       card.appendChild(description);
       description.textContent = elem.description;
       //liste invité
-      const fetchName = (name) =>
-        fetch("http://localhost:3000/api/attendees/" + name);
+      const fetchName = (name) => fetch("http://localhost:3000/api/attendees/");
       fetchName(elem.name)
         .then((response) => response.json())
         .then((attendees) => {
