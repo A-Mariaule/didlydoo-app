@@ -17,7 +17,7 @@ fetch("http://localhost:3000/api/events/")
       title.textContent = elem.name;
       //organisateur
       let organizer = document.createElement("p");
-      organizer.className = "card_organizer";
+      organizer.className = "card__organizer";
       card.appendChild(organizer);
       organizer.textContent = elem.author;
       //description
