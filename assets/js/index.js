@@ -1,7 +1,5 @@
 //variable
-var main=document.querySelector("main")
-
-
+var main = document.querySelector("main");
 
 fetch("http://localhost:3000/api/events/")
 .then((response)=>(response.json()))
@@ -23,13 +21,11 @@ fetch("http://localhost:3000/api/events/")
         card.appendChild(description)
         description.textContent=elem.description
         //liste invité
-        fetch("http://localhost:3000/api/attendees/")
+        const fetchName= (name)=>fetch("http://localhost:3000/api/attendees/"+name)
+        fetchName(elem.name)
         .then((response)=>(response.json()))
         .then((attendees)=>{
             console.log( attendees)
         })
     }
-})
-
-
-
+  });
