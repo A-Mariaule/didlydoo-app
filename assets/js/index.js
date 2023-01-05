@@ -23,8 +23,7 @@ fetch("http://localhost:3000/api/events/")
         card.appendChild(description)
         description.textContent=elem.description
         //liste invité
-        const fetchName= (name)=>fetch("http://localhost:3000/api/attendees/"+name)
-        fetchName(elem.name)
+        fetch("http://localhost:3000/api/attendees/")
         .then((response)=>(response.json()))
         .then((attendees)=>{
             console.log( attendees)
