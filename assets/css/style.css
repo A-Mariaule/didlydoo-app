@@ -85,6 +85,13 @@ form .form__create {
   border: none;
   box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
 }
+form .close__button {
+  align-self: flex-end;
+}
+form .close__button ion-icon {
+  color: white;
+  font-size: 150%;
+}
 form .form__create:focus {
   box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
