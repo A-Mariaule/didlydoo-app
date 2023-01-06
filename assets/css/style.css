@@ -25,7 +25,7 @@ header .header__title {
   font-size: 300%;
 }
 
-.header__button {
+.add__button {
   background-color: #02735e;
   font-size: 15px;
   width: 100px;
@@ -42,7 +42,7 @@ header .header__title {
   margin: 5px;
 }
 
-.header__button:hover {
+.add__button:hover {
   background: #028970;
 }
 
