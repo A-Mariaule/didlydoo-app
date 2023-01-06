@@ -1,1 +1,45 @@
-/*# sourceMappingURL=style.css.map */
+/* Color Theme Swatches in Hex */
+/* Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  background-color: #36BFB1;
+}
+
+header {
+  height: 15vh;
+  background-color: #038C73;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.header__button {
+  background-color: #02735E;
+  font-size: 15px;
+  width: 100px;
+  height: 50px;
+  border-width: 1px;
+  color: #fff;
+  font-weight: bold;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  text-shadow: 1px 1px 0px #2f6627;
+  position: absolute;
+  right: 0;
+  margin: 5px;
+}
+
+.header__button:hover {
+  background: #028970;
+}/*# sourceMappingURL=style.css.map */
