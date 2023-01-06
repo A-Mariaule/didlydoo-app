@@ -20,6 +20,11 @@ body {
   background-color: #36bfb1;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   height: 15vh;
   background-color: $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-2-hex;
@@ -27,6 +32,7 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
+  margin-bottom: 2%;
   .header__title {
     font-size: 300%;
   }
@@ -44,9 +50,8 @@ header {
   border-bottom-left-radius: 28px;
   border-bottom-right-radius: 28px;
   border: none;
-  position: absolute;
-  right: 0;
-  margin: 5px;
+  margin: 2%;
+  align-self: flex-end;
 }
 
 .add__button:hover {
@@ -69,11 +74,11 @@ form {
   z-index: 3;
   display: none;
   //glassmorphism
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 13px );
-    -webkit-backdrop-filter: blur( 13px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   .form__description {
     resize: none;
     height: 10vh;
@@ -93,7 +98,7 @@ form {
     box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
   }
 
-  .close__button{
+  .close__button {
     align-self: flex-end;
     ion-icon {
       color: white;
@@ -109,4 +114,50 @@ form {
 }
 .form__header {
   color: white;
+}
+
+.card {
+  background-color: $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-4-hex;
+  min-height: 65vh;
+  margin: 2% 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  .card__title {
+    text-align: center;
+    color: $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-5-hex;
+    background-color: white;
+  }
+  .card__table {
+    margin: 0% 3%;
+  }
+  .card__description {
+    background-color: #02735e;
+    min-height: 10vh;
+    margin: 0% 2%;
+  }
+  .card__organizer {
+    background-color: #02735e;
+    margin: 0% 2%;
+  }
+
+  table {
+    border: 1px solid #b3adad;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  table th {
+    border: 1px solid #b3adad;
+    padding: 5px;
+    background: #f0f0f0;
+    color: #313030;
+  }
+  table td {
+    border: 1px solid #b3adad;
+    text-align: center;
+    padding: 5px;
+    background: #ffffff;
+    color: #313030;
+  }
 }
