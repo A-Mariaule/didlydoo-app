@@ -16,6 +16,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  background-image: url(/image/forest.jpg);
 }
 
 header {
@@ -121,7 +122,7 @@ form .form__create:focus {
   background-color: white;
 }
 .card .card__table {
-  margin: 0% 3%;
+  margin: 0% 2%;
 }
 .card .card__description {
   background-color: #02735e;
@@ -131,6 +132,28 @@ form .form__create:focus {
 .card .card__organizer {
   background-color: #02735e;
   margin: 0% 2%;
+}
+.card .card__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.card .add__name {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #02735e;
+}
+.card .delete {
+  font-size: 32px;
 }
 .card table {
   border: 1px solid #b3adad;
