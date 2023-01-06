@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <script defer src="assets/js/index.js"></script>
+    <script defer src="assets/js/menu.js"></script>
     <title>didlydoo-app</title>
 </head>
 <body >
@@ -17,12 +18,13 @@
     </header>
     <main> 
         <form>
+            <div class="close__button"></div>
             <h1 class="form__header">Add Event</h1>
             <input type="text" class="form__name" placeholder="Your name">
             <input type="text" class="form__event" placeholder="Your event">
             <textarea class="form__description" cols="30" rows="10" placeholder="Description"></textarea>
             <input type="date" class="form__date" >
-            <button class="form__create">Create</button>
+            <button type="button" class="form__create">Create</button>
         </form>
         <button class="add__button">Add event</button>
         <div class="card">
