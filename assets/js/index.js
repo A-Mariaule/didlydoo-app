@@ -4,7 +4,6 @@ function Get(){
   fetch("http://localhost:3000/api/events/")
     .then((response) => response.json())
     .then((json) => {
-      console.log(json);
       for (let elem of json) {
         //creation de la carte
         let card = document.createElement("div");
@@ -64,11 +63,12 @@ function Get(){
         add_name.textContent="Add your name"
         card.appendChild(add_name)
         let delete_card=document.createElement("button")
-        delete_card.className="delete_card"
+        delete_card.className="delete"
         delete_card.textContent="Delete"
         card.appendChild(delete_card)
 
       }
+      delete_event()
     })
 }
  
@@ -88,9 +88,9 @@ function input(){
   return data
 }
 
+//creation event
 function Post(){
   data=input()
-
   let options = {
     method: "POST",
     body: JSON.stringify(data),
@@ -101,7 +101,30 @@ function Post(){
   fetch("http://localhost:3000/api/events/", options)
 }
 
-
+//bouton add event
 create=document.querySelector(".form__create")
 create.addEventListener("click",Post)
 
+//delete
+function delete_event(){
+  let delete_button=document.getElementsByClassName("delete")
+  for(let elem of delete_button){
+    elem.addEventListener("click",delete_card);
+  }
+}
+
+function delete_card(e){
+  name_event=e.target.parentElement.firstElementChild.textContent
+  fetch("http://localhost:3000/api/events/")
+  .then((response)=>response.json())
+  .then((json)=>{
+    for(let elem of json){
+      if(elem.name==name_event){
+        id=elem.id
+        fetch("http://localhost:3000/api/events/"+id+"/",{
+          method:"Delete"
+        })
+      }
+    }
+  })
+}
