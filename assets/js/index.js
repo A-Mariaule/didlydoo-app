@@ -59,7 +59,7 @@ function Get(){
         }
         //bouton
         let add_name=document.createElement("button")
-        add_name.className="add_name"
+        add_name.className="add__name"
         add_name.textContent="Add your name"
         card.appendChild(add_name)
         let delete_card=document.createElement("button")
