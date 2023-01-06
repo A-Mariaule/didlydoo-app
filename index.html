@@ -1,63 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="assets/js/index.js"></script>
     <script defer src="assets/js/menu.js"></script>
     <title>didlydoo-app</title>
-</head>
-<body >
+  </head>
+  <body>
     <header class="header">
-        <h1 class="header__title">Didlydoo</h1>
+      <h1 class="header__title">Didlydoo</h1>
     </header>
-    <main> 
-        <form>
-            <div class="close__button"><ion-icon name="close-outline"></ion-icon></div>
-            <h1 class="form__header">Add Event</h1>
-            <input type="text" class="form__name" placeholder="Your name">
-            <input type="text" class="form__event" placeholder="Your event">
-            <textarea class="form__description" cols="30" rows="10" placeholder="Description"></textarea>
-            <input type="date" class="form__date" >
-            <button type="button" class="form__create">Create</button>
-        </form>
-        <button class="add__button">Add event</button>
-        <div class="card">
-            <h2 class="card__title">Title event</h2>
-            <p class="card__organizer">Organizer:</p>
-            <p class="card__description">Description:</p>
-            <table class="card__table">
-                <tr>
-                    <th width="20%">Name</th>
-                    <th>Date</th>
-                    <th>Date</th>
-                </tr>
-                <tr>
-                    <th>Michou</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <th>Barbara</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <th>Kévin</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </table>
-            <button class="add_name">Add your name</button>
-            <button class="delete">Delete</button>
+    <main>
+      <form>
+        <div class="close__button">
+          <ion-icon name="close-outline"></ion-icon>
         </div>
+        <h1 class="form__header">Add Event</h1>
+        <input type="text" class="form__name" placeholder="Your name" />
+        <input type="text" class="form__event" placeholder="Your event" />
+        <textarea
+          class="form__description"
+          cols="30"
+          rows="10"
+          placeholder="Description"
+        ></textarea>
+        <input type="date" class="form__date" />
+        <button type="button" class="form__create">Create</button>
+      </form>
+      <button class="add__button">Add event</button>
+      <div class="card">
+        <h2 class="card__title">Title event</h2>
+        <p class="card__organizer">Organizer:</p>
+        <p class="card__description">Description:</p>
+        <table class="card__table">
+          <tr>
+            <th width="20%">Name</th>
+            <th>Date</th>
+            <th>Date</th>
+          </tr>
+          <tr>
+            <th>Michou</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th>Barbara</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th>Kévin</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </table>
+        <div class="card__bottom">
+          <button class="add__name">Add your name</button>
+          <div>
+            <ion-icon class="delete" name="trash-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
     </main>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
