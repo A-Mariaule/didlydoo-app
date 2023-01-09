@@ -20,8 +20,8 @@
       <h1 class="header__title">Didlydoo</h1>
     </header>
     <main>
-      <form>
-        <div class="close__button">
+      <form class="add__form">
+        <div class="close__button__add">
           <p>x</p>
         </div>
         <h1 class="form__header">Add Event</h1>
@@ -36,45 +36,63 @@
         <input type="date" class="form__date" />
         <button type="button" class="form__create">Create</button>
       </form>
+      <form class="edit__form">
+        <div class="close__button__edit">
+          <p>x</p>
+        </div>
+        <h1 class="form__header">Edit event</h1>
+        <input type="text" class="form__name" placeholder="New name" />
+        <input type="text" class="form__event" placeholder="New event" />
+        <textarea
+          class="form__description"
+          cols="30"
+          rows="10"
+          placeholder="New description"
+        ></textarea>
+        <button type="button" class="form__create">Edit</button>
+      </form>
       <button class="add__button">Add event</button>
       <div class="card__container">
         <div class="card">
-            <h2 class="card__title">Title event</h2>
-            <p class="card__organizer">Organizer:</p>
-            <p class="card__description">Description:</p>
-            <table class="card__table">
+          <h2 class="card__title">Title event</h2>
+          <p class="card__organizer">Organizer:</p>
+          <p class="card__description">Description:</p>
+          <table class="card__table">
             <tr>
-                <th width="20%">Name</th>
-                <th>Date</th>
-                <th>Date</th>
+              <th width="20%">Name</th>
+              <th>Date</th>
+              <th>Date</th>
             </tr>
             <tr>
-                <th>Michou</th>
-                <th></th>
-                <th></th>
+              <th>Michou</th>
+              <th></th>
+              <th></th>
             </tr>
             <tr>
-                <th>Barbara</th>
-                <th></th>
-                <th></th>
+              <th>Barbara</th>
+              <th></th>
+              <th></th>
             </tr>
             <tr>
-                <th>Kévin</th>
-                <th></th>
-                <th></th>
+              <th>Kévin</th>
+              <th></th>
+              <th></th>
             </tr>
-            </table>
-            <div class="card__bottom">
-                <div>
-                    <button class="add__name">Add your name</button>
-                    <button class="add__date">Add date</button>
-                </div>
-                <div>
-                        <img class="delete" src="assets/image/trash.png" alt="">
-                </div>
+          </table>
+          <div class="card__bottom">
+            <div>
+              <button class="add__name">Add your name</button>
+              <button class="add__date">Add date</button>
             </div>
+            <div>
+              <img class="edit" src="assets/image/edit.png" alt="" />
+            </div>
+            <div>
+              <img class="delete" src="assets/image/trash.png" alt="" />
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
     </main>
   </body>
 </html>
