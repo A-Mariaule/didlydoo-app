@@ -23,7 +23,6 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  background-image: url(/image/forest.jpg);
 }
 
 header {
@@ -34,6 +33,9 @@ header {
   align-items: center;
   color: white;
   margin-bottom: 2%;
+  // background-image: url(../image/forest.jpg);
+  // background-position:center;
+  // background-size: cover;
   .header__title {
     font-size: 300%;
   }
@@ -101,10 +103,8 @@ form {
 
   .close__button {
     align-self: flex-end;
-    ion-icon {
-      color: white;
-      font-size: 150%;
-    }
+    color: white;
+    font-size: 150%;
   }
 
   .form__create:focus {

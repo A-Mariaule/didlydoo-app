@@ -16,7 +16,6 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  background-image: url(/image/forest.jpg);
 }
 
 header {
@@ -97,9 +96,6 @@ form .form__create {
 
 form .close__button {
   align-self: flex-end;
-}
-
-form .close__button ion-icon {
   color: white;
   font-size: 150%;
 }
