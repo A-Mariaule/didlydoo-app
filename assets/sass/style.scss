@@ -33,9 +33,9 @@ header {
   align-items: center;
   color: white;
   margin-bottom: 2%;
-  // background-image: url(../image/forest.jpg);
-  // background-position:center;
-  // background-size: cover;
+  background-image: url(../image/forest2.jpg);
+  background-position:center;
+  background-size: cover;
   .header__title {
     font-size: 300%;
   }
@@ -218,6 +218,8 @@ form {
       }
 
   .delete{
+    margin-left: 4px;
+    padding-left: 2px;
     height: auto;
     width: 40px;
   }
@@ -249,5 +251,5 @@ form {
   }
   .card{
     min-width: 400px;
-  }
+    }
 }
