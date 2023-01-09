@@ -28,6 +28,7 @@ header {
   color: white;
   margin-bottom: 2%;
 }
+
 header .header__title {
   font-size: 300%;
 }
@@ -63,7 +64,7 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(3, 140, 115, 0.6274509804);
+  background-color: #038c73a0;
   padding: 3%;
   z-index: 3;
   display: none;
@@ -73,11 +74,13 @@ form {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 form .form__description {
   resize: none;
   height: 10vh;
   width: 40vw;
 }
+
 form .form__create {
   align-self: flex-end;
   display: flex;
@@ -91,13 +94,16 @@ form .form__create {
   border: none;
   box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
 }
+
 form .close__button {
   align-self: flex-end;
 }
+
 form .close__button ion-icon {
   color: white;
   font-size: 150%;
 }
+
 form .form__create:focus {
   box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
@@ -116,27 +122,33 @@ form .form__create:focus {
   justify-content: space-between;
   color: white;
 }
+
 .card .card__title {
   text-align: center;
   color: #0d0d0d;
   background-color: white;
 }
+
 .card .card__table {
   margin: 0% 2%;
 }
+
 .card .card__description {
   background-color: #02735e;
   min-height: 10vh;
   margin: 0% 2%;
 }
+
 .card .card__organizer {
   background-color: #02735e;
   margin: 0% 2%;
 }
+
 .card .card__bottom {
   display: flex;
   justify-content: space-between;
 }
+
 .card .add__name {
   box-shadow: 0px 10px 14px -7px #276873;
   background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
@@ -152,24 +164,30 @@ form .form__create:focus {
   text-decoration: none;
   text-shadow: 0px 1px 0px #02735e;
 }
+
 .card .delete {
-  font-size: 32px;
+  height: auto;
+  width: 40px;
 }
+
 .card table {
   border: 1px solid #b3adad;
   border-collapse: collapse;
   padding: 5px;
 }
+
 .card table th {
   border: 1px solid #b3adad;
   padding: 5px;
   background: #f0f0f0;
   color: #313030;
 }
+
 .card table td {
   border: 1px solid #b3adad;
   text-align: center;
   padding: 5px;
   background: #ffffff;
   color: #313030;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
