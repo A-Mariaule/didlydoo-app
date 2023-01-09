@@ -44,7 +44,7 @@ header {
 .add__button {
   background-color: $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-3-hex;
   font-size: 15px;
-  width: 100px;
+  width: 20%;
   height: 50px;
   color: #fff;
   font-weight: bold;
@@ -65,10 +65,11 @@ header {
   background: #028970;
 }
 
+
 .add__form {
   position: fixed;
   min-height: 60%;
-  min-width: 70%;
+  min-width: 300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -91,7 +92,7 @@ header {
   .edit__form {
     position: fixed;
     min-height: 60%;
-    min-width: 70%;
+    min-width: 300px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -114,7 +115,7 @@ header {
       .form__description {
         resize: none;
         height: 10vh;
-        width: 40vw;
+        width: 148px;
       }
       .form__create {
         align-self: flex-end;
@@ -153,8 +154,7 @@ header {
 .card {
   background-color: $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-4-hex;
   min-height: 65vh;
-  min-width: 350px;
-  max-width: 450px;
+  min-width: 320px;
   margin: 2% 3%;
   display: flex;
   flex-direction: column;
@@ -278,8 +278,5 @@ header {
   .card__container {
     flex-wrap: wrap;
     flex-direction: row;
-  }
-  .card {
-    min-width: 400px;
   }
 }
