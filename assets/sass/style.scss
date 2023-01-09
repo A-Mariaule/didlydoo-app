@@ -148,19 +148,30 @@ form {
   }
 
   .add__name {
-    box-shadow: 0px 10px 14px -7px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:20px;
-	font-weight:bold;
-	padding:13px 32px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-3-hex;
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 12px;
+    color: #fff;
+    background-color: #038C73;
+    padding: 4px 6px;
+    border: solid #038C73 2px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition : 1025ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    }
+
+.add__name {
+  transition : 1025ms;
+  padding: 10px 10px;
+  transform : translateY(-0px);
+  background-color: #2a9d8f;
+  color: #264653;
+  border: solid 2px #2a9d8f;
   }
 
   .delete{
