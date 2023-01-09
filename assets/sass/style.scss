@@ -53,7 +53,7 @@ header {
   border-bottom-left-radius: 28px;
   border-bottom-right-radius: 28px;
   border: none;
-  margin: 2%;
+  margin-right: 5px;
   align-self: flex-end;
   position: relative;
   right: 0;
@@ -223,6 +223,14 @@ form {
     height: auto;
     width: 40px;
     cursor: pointer;
+    transform: translate(0%, 50%);
+  }
+
+  .edit{
+    height: auto;
+    width: 40px;
+    cursor: pointer;
+    transform: translate(-50%, 50%);
   }
 
   table {
