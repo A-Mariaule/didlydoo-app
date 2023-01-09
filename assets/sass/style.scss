@@ -151,6 +151,12 @@ header {
   flex-direction: row;
 }
 
+.card__table {
+  font-size: 12px;
+  margin: 0% 2%;
+  max-width: 100vw;
+}
+
 .card {
   background-color: $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-4-hex;
   min-height: 65vh;
@@ -165,12 +171,11 @@ header {
     color: $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-5-hex;
     background-color: white;
   }
-  .card__table {
-    margin: 0% 2%;
-  }
+
   .card__description {
     background-color: #02735e;
     min-height: 10vh;
+    max-width: 100%;
     margin: 0% 2%;
   }
   .card__organizer {
