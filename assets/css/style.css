@@ -16,7 +16,6 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  background-image: url(/image/forest.jpg);
 }
 
 header {
@@ -47,6 +46,9 @@ header .header__title {
   border: none;
   margin: 2%;
   align-self: flex-end;
+  position: relative;
+  right: 0;
+  top: 0;
 }
 
 .add__button:hover {
@@ -97,9 +99,6 @@ form .form__create {
 
 form .close__button {
   align-self: flex-end;
-}
-
-form .close__button ion-icon {
   color: white;
   font-size: 150%;
 }
@@ -113,9 +112,18 @@ form .form__create:focus {
   color: white;
 }
 
+.card__container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 .card {
   background-color: #014034;
   min-height: 65vh;
+  min-width: 400px;
+  max-width: 450px;
   margin: 2% 3%;
   display: flex;
   flex-direction: column;
@@ -157,7 +165,7 @@ form .form__create:focus {
   background-color: #038C73;
   padding: 4px 6px;
   border: solid #038C73 2px;
-  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  box-shadow: black 0px 0px 0px 0px;
   border-radius: 50px;
   transition: 1025ms;
   transform: translateY(0);
@@ -166,6 +174,7 @@ form .form__create:focus {
   align-items: center;
   cursor: pointer;
 }
+
 .card .add__name {
   transition: 1025ms;
   padding: 10px 10px;
@@ -199,5 +208,15 @@ form .form__create:focus {
   padding: 5px;
   background: #ffffff;
   color: #313030;
+}
+
+@media screen and (min-width: 600px) {
+  .card__container {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .card {
+    min-width: 400px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

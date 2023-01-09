@@ -22,7 +22,7 @@
     <main>
       <form>
         <div class="close__button">
-          <ion-icon name="close-outline"></ion-icon>
+          <p>x</p>
         </div>
         <h1 class="form__header">Add Event</h1>
         <input type="text" class="form__name" placeholder="Your name" />
@@ -37,42 +37,44 @@
         <button type="button" class="form__create">Create</button>
       </form>
       <button class="add__button">Add event</button>
-      <div class="card">
-        <h2 class="card__title">Title event</h2>
-        <p class="card__organizer">Organizer:</p>
-        <p class="card__description">Description:</p>
-        <table class="card__table">
-          <tr>
-            <th width="20%">Name</th>
-            <th>Date</th>
-            <th>Date</th>
-          </tr>
-          <tr>
-            <th>Michou</th>
-            <th></th>
-            <th></th>
-          </tr>
-          <tr>
-            <th>Barbara</th>
-            <th></th>
-            <th></th>
-          </tr>
-          <tr>
-            <th>Kévin</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </table>
-        <div class="card__bottom">
-            <div>
-                <button class="add__name">Add your name</button>
-                <button class="add__date">Add date</button>
+      <div class="card__container">
+        <div class="card">
+            <h2 class="card__title">Title event</h2>
+            <p class="card__organizer">Organizer:</p>
+            <p class="card__description">Description:</p>
+            <table class="card__table">
+            <tr>
+                <th width="20%">Name</th>
+                <th>Date</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                <th>Michou</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>Barbara</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>Kévin</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </table>
+            <div class="card__bottom">
+                <div>
+                    <button class="add__name">Add your name</button>
+                    <button class="add__date">Add date</button>
+                </div>
+                <div>
+                        <img class="delete" src="assets/image/trash.png" alt="">
+                </div>
             </div>
-          <div >
-                <img class="delete" src="assets/image/trash.png" alt="">
-          </div>
         </div>
-      </div>
+    </div>
     </main>
   </body>
 </html>
