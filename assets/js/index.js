@@ -46,6 +46,10 @@ function Get(){
               ligne.appendChild(invite) 
               for(let i of elem.dates){
                   let available=document.createElement("td")
+                  available.className=""+i.date+""
+                  let new_name=item.name.split(' ').join('_')
+                  available.classList.add(""+new_name+"")
+                  available.addEventListener("click",change)
                   for(let j of i.attendees){
                     if(j.name==item.name && j.available){
                       available.textContent="v"
@@ -65,13 +69,20 @@ function Get(){
         add_name.className="add__name"
         add_name.textContent="Add your name"
         card__bottom.appendChild(add_name)
-        let delete_card=document.createElement("button")
+        let input=document.createElement("button")
+        input.textContent="Date"
+        input.className="add__date"
+        card__bottom.appendChild(input)
+        let div=document.createElement("div")
+        card__bottom.appendChild(div)
+        let delete_card=document.createElement("img")
         delete_card.className="delete"
-        delete_card.textContent="delete"
-        card__bottom.appendChild(delete_card)
+        delete_card.src="../assets/image/trash.png"
+        div.appendChild(delete_card)
       }
       delete_event()
       button_Name()
+      button_Date()
     })
 }
  
@@ -117,7 +128,7 @@ function delete_event(){
 }
 
 function delete_card(e){
-  name_event=e.target.parentElement.parentElement.firstElementChild.textContent
+  name_event=e.target.parentElement.parentElement.parentElement.firstElementChild.textContent
   fetch("http://localhost:3000/api/events/")
   .then((response)=>response.json())
   .then((json)=>{
@@ -141,7 +152,7 @@ function button_Name(){
 }
 
 function AddName(e){
-  resultat = prompt("Indique un nom");
+  resultat = prompt("Add your name");
   name_event=e.target.parentElement.parentElement.firstElementChild.textContent
   fetch("http://localhost:3000/api/events/")
   .then((response)=>response.json())
@@ -152,6 +163,73 @@ function AddName(e){
         let data={ name: resultat,dates : [ { date:'2000-01-01', available: true } ]}
         let options = {
           method: "POST",
+          body:JSON.stringify(data) ,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+        fetch("http://localhost:3000/api/events/"+id+"/attend",options)
+      }
+    }
+  })
+}
+
+//add date
+
+function button_Date(){
+  let button_adddate=document.getElementsByClassName("add__date")
+  for (let elem of button_adddate){
+    elem.addEventListener("click",addDate)
+  }
+}
+
+function addDate(e){
+  let resultat=prompt("Enter a date (yyyy-mm-dd)")
+  let resultat_form=[resultat]
+
+  name_event=e.target.parentElement.parentElement.firstElementChild.textContent
+  fetch("http://localhost:3000/api/events/")
+  .then((response)=>response.json())
+  .then((json)=>{
+    for(let elem of json){
+      if(elem.name==name_event){
+        id=elem.id
+        let data={ dates:resultat_form}
+        let options = {
+          method: "POST",
+          body:JSON.stringify(data) ,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+        fetch("http://localhost:3000/api/events/"+id+"/add_dates",options)
+      }
+    }
+  })
+}
+
+//change disponibilité
+function change(e){
+  if(e.target.textContent=="" || e.target.textContent=="x"){
+    e.target.textContent="v"
+    available_invite=true
+  }
+  else if(e.target.textContent=="v"){
+    e.target.textContent="x"
+    available_invite=false
+  }
+  name_invite=e.target.classList[1].split("_").join(" ")
+  date_invite=e.target.classList[0]
+  name_event=e.target.parentElement.parentElement.parentElement.firstElementChild.textContent
+  fetch("http://localhost:3000/api/events/")
+  .then((response)=>response.json())
+  .then((json)=>{
+    for(let elem of json){
+      if(elem.name==name_event){
+        id=elem.id
+        let data={ name: name_invite,dates : [ { date:date_invite, available: available_invite } ]}
+        let options = {
+          method: "PATCH",
           body:JSON.stringify(data) ,
           headers: {
             "Content-Type": "application/json"
