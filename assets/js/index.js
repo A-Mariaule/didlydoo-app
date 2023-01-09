@@ -1,3 +1,4 @@
+
 var main = document.querySelector("main");
 let card_container = document.querySelector(".card__container")
 card_container.className = "card__container"
@@ -78,6 +79,13 @@ function Get() {
         input.textContent = "Date"
         input.className = "add__date"
         div2.appendChild(input)
+        let div3=document.createElement("div")
+        card__bottom.appendChild(div3)
+        let edit=document.createElement("img")
+        edit.className="edit"
+        edit.src="../assets/image/edit.png"
+        div3.appendChild(edit)
+
         let div = document.createElement("div")
         card__bottom.appendChild(div)
         let delete_card = document.createElement("img")
@@ -88,6 +96,7 @@ function Get() {
       delete_event()
       button_Name()
       button_Date()
+      edit_event()
     })
 }
 
@@ -123,6 +132,17 @@ function Post() {
 //bouton add event
 create = document.querySelector(".form__create")
 create.addEventListener("click", Post)
+
+//edit
+function edit_event(){
+  let edit_button=document.getElementsByClassName("edit")
+  let editForm = document.querySelector(".edit__form");
+  for (let elem of edit_button){
+    elem.addEventListener("click",()=>{
+      editForm.style.cssText = "display:flex";
+    })
+  }
+}
 
 //delete
 function delete_event() {
