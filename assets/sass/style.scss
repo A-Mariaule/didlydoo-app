@@ -58,6 +58,7 @@ header {
   position: relative;
   right: 0;
   top: 0;
+  cursor: pointer;
 }
 
 .add__button:hover {
@@ -108,6 +109,7 @@ form {
     align-self: flex-end;
     color: white;
     font-size: 150%;
+    cursor: pointer;
   }
 
   .form__create:focus {
@@ -130,7 +132,7 @@ form {
 .card {
   background-color: $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-4-hex;
   min-height: 65vh;
-  min-width: 400px;
+  min-width: 350px;
   max-width: 450px;
   margin: 2% 3%;
   display: flex;
@@ -220,6 +222,7 @@ form {
   .delete{
     height: auto;
     width: 40px;
+    cursor: pointer;
   }
 
   table {
