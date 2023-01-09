@@ -53,7 +53,7 @@ header {
   border-bottom-left-radius: 28px;
   border-bottom-right-radius: 28px;
   border: none;
-  margin: 2%;
+  margin-right: 5px;
   align-self: flex-end;
   position: relative;
   right: 0;
@@ -65,7 +65,7 @@ header {
   background: #028970;
 }
 
-form {
+.add__form {
   position: fixed;
   min-height: 60%;
   min-width: 70%;
@@ -86,43 +86,64 @@ form {
   -webkit-backdrop-filter: blur(13px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  .form__description {
-    resize: none;
-    height: 10vh;
-    width: 40vw;
-  }
-  .form__create {
-    align-self: flex-end;
+}
+
+  .edit__form {
+    position: fixed;
+    min-height: 60%;
+    min-width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6px 14px;
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
-    border-radius: 6px;
-    color: #3d3d3d;
-    background: #fff;
-    border: none;
-    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
-  }
+    justify-content: space-between;
+    background-color: #038c73a0;
+    padding: 3%;
+    z-index: 3;
+    display: none;
+    //glassmorphism
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+      }
 
-  .close__button {
-    align-self: flex-end;
-    color: white;
-    font-size: 150%;
-    cursor: pointer;
-  }
+      .form__description {
+        resize: none;
+        height: 10vh;
+        width: 40vw;
+      }
+      .form__create {
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px 14px;
+        font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+        border-radius: 6px;
+        color: #3d3d3d;
+        background: #fff;
+        border: none;
+        box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+      }
 
-  .form__create:focus {
-    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1),
-      0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-    outline: 0;
-  }
-}
-.form__header {
-  color: white;
-}
+      .close__button__add {
+        align-self: flex-end;
+        color: white;
+        font-size: 150%;
+        cursor: pointer;
+      }
+      .close__button__edit {
+        align-self: flex-end;
+        color: white;
+        font-size: 150%;
+        cursor: pointer;
+      }
 
-.card__container{
+.card__container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -156,7 +177,7 @@ form {
     background-color: #02735e;
     margin: 0% 2%;
   }
-  .card__bottom{
+  .card__bottom {
     display: flex;
     justify-content: space-between;
   }
@@ -166,63 +187,71 @@ form {
     font-weight: 400px;
     font-size: 12px;
     color: #fff;
-    background-color: #038C73;
+    background-color: #038c73;
     padding: 4px 6px;
     margin: 4px;
-    border: solid #038C73 2px;
+    border: solid #038c73 2px;
     box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
     border-radius: 50px;
-    transition : 1025ms;
+    transition: 1025ms;
     transform: translateY(0);
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
-    }
+  }
 
   .add__name:hover {
     font-weight: 600px;
-    transition : 1025ms;
+    transition: 1025ms;
     padding: 6px 8px;
-    transform : translateY(-0px);
-    background-color:  #038C73;
+    transform: translateY(-0px);
+    background-color: #038c73;
     color: #264653;
-    border: solid 2px  #038C73;
+    border: solid 2px #038c73;
   }
 
   .add__date {
     font-family: "Roboto", sans-serif;
     font-weight: 400px;
     font-size: 12px;
-    color: #0D0D0D;
+    color: #0d0d0d;
     background-color: #fff;
     padding: 4px 6px;
     margin: 4px;
     border: solid #fff 2px;
     box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
     border-radius: 50px;
-    transition : 1025ms;
+    transition: 1025ms;
     transform: translateY(0);
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
-    }
+  }
 
-    .add__date:hover{
-      transition : 1025ms;
-      padding: 6px 8px;
-      transform : translateY(-0px);
-      background-color: white;
-      color: #264653;
-      border: solid 2px white;
-      font-weight: 600px;
-      }
+  .add__date:hover {
+    transition: 1025ms;
+    padding: 6px 8px;
+    transform: translateY(-0px);
+    background-color: white;
+    color: #264653;
+    border: solid 2px white;
+    font-weight: 600px;
+  }
 
-  .delete{
+  .delete {
     height: auto;
     width: 40px;
     cursor: pointer;
+    transform: translate(0%, 50%);
+  }
+
+  .edit {
+    height: auto;
+    width: 40px;
+    cursor: pointer;
+    transform: translate(-50%, 50%);
   }
 
   table {
@@ -246,11 +275,11 @@ form {
 }
 
 @media screen and (min-width: 600px) {
-  .card__container{
+  .card__container {
     flex-wrap: wrap;
     flex-direction: row;
   }
-  .card{
+  .card {
     min-width: 400px;
   }
 }
