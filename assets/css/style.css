@@ -27,6 +27,7 @@ header {
   color: white;
   margin-bottom: 2%;
 }
+
 header .header__title {
   font-size: 300%;
 }
@@ -48,6 +49,7 @@ header .header__title {
   position: relative;
   right: 0;
   top: 0;
+  cursor: pointer;
 }
 
 .add__button:hover {
@@ -65,7 +67,7 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(3, 140, 115, 0.6274509804);
+  background-color: #038c73a0;
   padding: 3%;
   z-index: 3;
   display: none;
@@ -75,11 +77,13 @@ form {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 form .form__description {
   resize: none;
   height: 10vh;
   width: 40vw;
 }
+
 form .form__create {
   align-self: flex-end;
   display: flex;
@@ -93,13 +97,14 @@ form .form__create {
   border: none;
   box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
 }
+
 form .close__button {
   align-self: flex-end;
-}
-form .close__button ion-icon {
   color: white;
   font-size: 150%;
+  cursor: pointer;
 }
+
 form .form__create:focus {
   box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
@@ -127,27 +132,33 @@ form .form__create:focus {
   justify-content: space-between;
   color: white;
 }
+
 .card .card__title {
   text-align: center;
   color: #0d0d0d;
   background-color: white;
 }
+
 .card .card__table {
   margin: 0% 2%;
 }
+
 .card .card__description {
   background-color: #02735e;
   min-height: 10vh;
   margin: 0% 2%;
 }
+
 .card .card__organizer {
   background-color: #02735e;
   margin: 0% 2%;
 }
+
 .card .card__bottom {
   display: flex;
   justify-content: space-between;
 }
+
 .card .add__name {
   font-family: "Roboto", sans-serif;
   font-weight: 400px;
@@ -174,8 +185,9 @@ form .form__create:focus {
   transform: translateY(0px);
   background-color: #038C73;
   color: #264653;
-  border: solid 2px #038C73;
+  border: solid 2px  #038C73;
 }
+
 .card .add__date {
   font-family: "Roboto", sans-serif;
   font-weight: 400px;
@@ -185,7 +197,7 @@ form .form__create:focus {
   padding: 4px 6px;
   margin: 4px;
   border: solid #fff 2px;
-  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  box-shadow: black 0px 0px 0px 0px;
   border-radius: 50px;
   transition: 1025ms;
   transform: translateY(0);
@@ -194,6 +206,7 @@ form .form__create:focus {
   align-items: center;
   cursor: pointer;
 }
+
 .card .add__date:hover {
   transition: 1025ms;
   padding: 6px 8px;
@@ -203,21 +216,26 @@ form .form__create:focus {
   border: solid 2px white;
   font-weight: 600px;
 }
+
 .card .delete {
   height: auto;
   width: 40px;
+  cursor: pointer;
 }
+
 .card table {
   border: 1px solid #b3adad;
   border-collapse: collapse;
   padding: 5px;
 }
+
 .card table th {
   border: 1px solid #b3adad;
   padding: 5px;
   background: #f0f0f0;
   color: #313030;
 }
+
 .card table td {
   border: 1px solid #b3adad;
   text-align: center;
