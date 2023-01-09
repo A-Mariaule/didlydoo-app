@@ -1,5 +1,8 @@
-//GET
 var main = document.querySelector("main");
+let card_container = document.querySelector(".card__container");
+card_container.className = "card__container";
+main.appendChild(card_container);
+//get
 function Get() {
   fetch("http://localhost:3000/api/events/")
     .then((response) => response.json())
@@ -8,7 +11,7 @@ function Get() {
         //creation de la carte
         let card = document.createElement("div");
         card.className = "card";
-        main.appendChild(card);
+        card_container.appendChild(card);
         //nom de l'event
         let title = document.createElement("h2");
         title.className = "card__title";
@@ -46,6 +49,10 @@ function Get() {
           ligne.appendChild(invite);
           for (let i of elem.dates) {
             let available = document.createElement("td");
+            available.className = "" + i.date + "";
+            let new_name = item.name.split(" ").join("_");
+            available.classList.add("" + new_name + "");
+            available.addEventListener("click", change);
             for (let j of i.attendees) {
               if (j.name == item.name && j.available) {
                 available.textContent = "v";
@@ -60,17 +67,34 @@ function Get() {
         let card__bottom = document.createElement("div");
         card__bottom.className = "card__bottom";
         card.appendChild(card__bottom);
+        let div2 = document.createElement("div");
+        card__bottom.appendChild(div2);
         let add_name = document.createElement("button");
         add_name.className = "add__name";
         add_name.textContent = "Add your name";
-        card__bottom.appendChild(add_name);
-        let delete_card = document.createElement("button");
+        div2.appendChild(add_name);
+        let input = document.createElement("button");
+        input.textContent = "Date";
+        input.className = "add__date";
+        div2.appendChild(input);
+        let div3 = document.createElement("div");
+        card__bottom.appendChild(div3);
+        let edit = document.createElement("img");
+        edit.className = "edit";
+        edit.src = "../assets/image/edit.png";
+        div3.appendChild(edit);
+
+        let div = document.createElement("div");
+        card__bottom.appendChild(div);
+        let delete_card = document.createElement("img");
         delete_card.className = "delete";
-        delete_card.textContent = "delete";
-        card__bottom.appendChild(delete_card);
+        delete_card.src = "../assets/image/trash.png";
+        div.appendChild(delete_card);
       }
       delete_event();
       button_Name();
+      button_Date();
+      edit_event();
     });
 }
 
@@ -107,6 +131,17 @@ function Post() {
 create = document.querySelector(".form__create");
 create.addEventListener("click", Post);
 
+//edit
+function edit_event() {
+  let edit_button = document.getElementsByClassName("edit");
+  let editForm = document.querySelector(".edit__form");
+  for (let elem of edit_button) {
+    elem.addEventListener("click", () => {
+      editForm.style.cssText = "display:flex";
+    });
+  }
+}
+
 //delete
 function delete_event() {
   let delete_button = document.getElementsByClassName("delete");
@@ -117,7 +152,8 @@ function delete_event() {
 
 function delete_card(e) {
   name_event =
-    e.target.parentElement.parentElement.firstElementChild.textContent;
+    e.target.parentElement.parentElement.parentElement.firstElementChild
+      .textContent;
   fetch("http://localhost:3000/api/events/")
     .then((response) => response.json())
     .then((json) => {
@@ -141,9 +177,10 @@ function button_Name() {
 }
 
 function AddName(e) {
-  resultat = prompt("Indique un nom");
+  resultat = prompt("Add your name");
   name_event =
-    e.target.parentElement.parentElement.firstElementChild.textContent;
+    e.target.parentElement.parentElement.parentElement.firstElementChild
+      .textContent;
   fetch("http://localhost:3000/api/events/")
     .then((response) => response.json())
     .then((json) => {
@@ -156,6 +193,82 @@ function AddName(e) {
           };
           let options = {
             method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          };
+          fetch("http://localhost:3000/api/events/" + id + "/attend", options);
+        }
+      }
+    });
+}
+
+//add date
+
+function button_Date() {
+  let button_adddate = document.getElementsByClassName("add__date");
+  for (let elem of button_adddate) {
+    elem.addEventListener("click", addDate);
+  }
+}
+
+function addDate(e) {
+  let resultat = prompt("Enter a date (yyyy-mm-dd)");
+  let resultat_form = [resultat];
+  name_event =
+    e.target.parentElement.parentElement.parentElement.firstElementChild
+      .textContent;
+  fetch("http://localhost:3000/api/events/")
+    .then((response) => response.json())
+    .then((json) => {
+      for (let elem of json) {
+        if (elem.name == name_event) {
+          id = elem.id;
+          let data = { dates: resultat_form };
+          let options = {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          };
+          fetch(
+            "http://localhost:3000/api/events/" + id + "/add_dates",
+            options
+          );
+        }
+      }
+    });
+}
+
+//change disponibilité
+function change(e) {
+  if (e.target.textContent == "" || e.target.textContent == "x") {
+    e.target.textContent = "v";
+    available_invite = true;
+  } else if (e.target.textContent == "v") {
+    e.target.textContent = "x";
+    available_invite = false;
+  }
+  name_invite = e.target.classList[1].split("_").join(" ");
+  date_invite = e.target.classList[0];
+  name_event =
+    e.target.parentElement.parentElement.parentElement.firstElementChild
+      .textContent;
+  fetch("http://localhost:3000/api/events/")
+    .then((response) => response.json())
+    .then((json) => {
+      for (let elem of json) {
+        if (elem.name == name_event) {
+          id = elem.id;
+          console.log(elem);
+          let data = {
+            name: name_invite,
+            dates: [{ date: date_invite, available: available_invite }],
+          };
+          let options = {
+            method: "PATCH",
             body: JSON.stringify(data),
             headers: {
               "Content-Type": "application/json",
