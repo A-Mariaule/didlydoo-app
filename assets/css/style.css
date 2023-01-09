@@ -122,7 +122,7 @@ form .form__create:focus {
 .card {
   background-color: #014034;
   min-height: 65vh;
-  min-width: 400px;
+  min-width: 350px;
   max-width: 450px;
   margin: 2% 3%;
   display: flex;
