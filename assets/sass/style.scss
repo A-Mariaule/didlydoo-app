@@ -23,7 +23,6 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  background-image: url(/image/forest.jpg);
 }
 
 header {
@@ -34,6 +33,9 @@ header {
   align-items: center;
   color: white;
   margin-bottom: 2%;
+  // background-image: url(../image/forest.jpg);
+  // background-position:center;
+  // background-size: cover;
   .header__title {
     font-size: 300%;
   }
@@ -53,6 +55,9 @@ header {
   border: none;
   margin: 2%;
   align-self: flex-end;
+  position: relative;
+  right: 0;
+  top: 0;
 }
 
 .add__button:hover {
@@ -101,10 +106,8 @@ form {
 
   .close__button {
     align-self: flex-end;
-    ion-icon {
-      color: white;
-      font-size: 150%;
-    }
+    color: white;
+    font-size: 150%;
   }
 
   .form__create:focus {
@@ -117,9 +120,18 @@ form {
   color: white;
 }
 
+.card__container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 .card {
   background-color: $Teal-turquoise-aqua-glitter-celebrate-birthday-Christmas-sparkle-black-background-4-hex;
   min-height: 65vh;
+  min-width: 400px;
+  max-width: 450px;
   margin: 2% 3%;
   display: flex;
   flex-direction: column;
@@ -227,5 +239,15 @@ form {
     padding: 5px;
     background: #ffffff;
     color: #313030;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .card__container{
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .card{
+    min-width: 400px;
   }
 }
