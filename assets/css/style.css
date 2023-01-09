@@ -141,10 +141,16 @@ form .form__create {
   flex-direction: row;
 }
 
+.card__table {
+  font-size: 12px;
+  margin: 0% 2%;
+  max-width: 100vw;
+}
+
 .card {
   background-color: #014034;
   min-height: 65vh;
-  min-width: 320px;
+  width: 320px;
   margin: 2% 3%;
   display: flex;
   flex-direction: column;
@@ -156,12 +162,17 @@ form .form__create {
   color: #0d0d0d;
   background-color: white;
 }
+<<<<<<< HEAD
 .card .card__table {
   margin: 0% 2%;
 }
+=======
+
+>>>>>>> 47b0acecc12575e053d029b94d34ac63d41e67f6
 .card .card__description {
   background-color: #02735e;
   min-height: 10vh;
+  max-width: 100%;
   margin: 0% 2%;
 }
 .card .card__organizer {

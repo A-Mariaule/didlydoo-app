@@ -15,14 +15,6 @@
         "name": "Michou",
         "dates": [
           {
-            "date": "2022-03-17",
-            "available": true
-          },
-          {
-            "date": "2022-03-18",
-            "available": false
-          },
-          {
             "date": "2022-03-21",
             "available": true
           }
