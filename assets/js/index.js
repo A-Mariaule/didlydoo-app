@@ -2,7 +2,7 @@ var main = document.querySelector("main");
 let card_container = document.querySelector(".card__container");
 card_container.className = "card__container";
 main.appendChild(card_container);
-//get
+//get : récupération des données sur l'api
 function Get() {
   fetch("http://localhost:3000/api/events/")
     .then((response) => response.json())
@@ -262,10 +262,9 @@ function change(e) {
       for (let elem of json) {
         if (elem.name == name_event) {
           id = elem.id;
-          console.log(elem);
           let data = {
             name: name_invite,
-            dates: [{ date: date_invite, available: available_invite }],
+            dates: [{ date: date_invite, available:  available_invite }],
           };
           let options = {
             method: "PATCH",

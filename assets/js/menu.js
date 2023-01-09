@@ -10,16 +10,14 @@ addButton.addEventListener("click", () => {
   addForm.style.cssText = "display:flex";
 });
 
-editButton.addEventListener("click", () => {
+/*editButton.addEventListener("click", () => {
   editForm.style.cssText = "display:flex";
-});
+});*/ 
 
 closeButtonAdd.addEventListener("click", () => {
   addForm.style.cssText = "display:none";
-  console.log("test");
 });
 
 closeButtonEdit.addEventListener("click", () => {
   editForm.style.cssText = "display:none";
-  console.log("test");
 });
