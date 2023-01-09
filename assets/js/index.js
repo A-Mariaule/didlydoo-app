@@ -58,17 +58,20 @@ function Get(){
                 }
         }
         //bouton
+        let card__bottom=document.createElement("div")
+        card__bottom.className="card__bottom"
+        card.appendChild(card__bottom)
         let add_name=document.createElement("button")
         add_name.className="add__name"
         add_name.textContent="Add your name"
-        card.appendChild(add_name)
+        card__bottom.appendChild(add_name)
         let delete_card=document.createElement("button")
         delete_card.className="delete"
-        delete_card.textContent="Delete"
-        card.appendChild(delete_card)
-
+        delete_card.textContent="delete"
+        card__bottom.appendChild(delete_card)
       }
       delete_event()
+      button_Name()
     })
 }
  
@@ -114,7 +117,7 @@ function delete_event(){
 }
 
 function delete_card(e){
-  name_event=e.target.parentElement.firstElementChild.textContent
+  name_event=e.target.parentElement.parentElement.firstElementChild.textContent
   fetch("http://localhost:3000/api/events/")
   .then((response)=>response.json())
   .then((json)=>{
@@ -124,6 +127,37 @@ function delete_card(e){
         fetch("http://localhost:3000/api/events/"+id+"/",{
           method:"Delete"
         })
+      }
+    }
+  })
+}
+
+//addName
+function button_Name(){
+  let button_addName=document.getElementsByClassName("add__name")
+  for (let elem of button_addName){
+    elem.addEventListener("click",AddName)
+  }
+}
+
+function AddName(e){
+  resultat = prompt("Indique un nom");
+  name_event=e.target.parentElement.parentElement.firstElementChild.textContent
+  fetch("http://localhost:3000/api/events/")
+  .then((response)=>response.json())
+  .then((json)=>{
+    for(let elem of json){
+      if(elem.name==name_event){
+        id=elem.id
+        let data={ name: resultat,dates : [ { date:'2000-01-01', available: true } ]}
+        let options = {
+          method: "POST",
+          body:JSON.stringify(data) ,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+        fetch("http://localhost:3000/api/events/"+id+"/attend",options)
       }
     }
   })
